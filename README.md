@@ -1,11 +1,13 @@
 # api documentation for  [esprima (v3.1.3)](http://esprima.org)  [![npm package](https://img.shields.io/npm/v/npmdoc-esprima.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-esprima) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-esprima.svg)](https://travis-ci.org/npmdoc/node-npmdoc-esprima)
 #### ECMAScript parsing infrastructure for multipurpose analysis
 
-[![NPM](https://nodei.co/npm/esprima.png?downloads=true)](https://www.npmjs.com/package/esprima)
+[![NPM](https://nodei.co/npm/esprima.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/esprima)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-esprima/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-esprima_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-esprima/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-esprima/build/screenCapture.buildCi.browser.apidoc.html.png)](https://npmdoc.github.io/node-npmdoc-esprima/build/apidoc.html)
 
-![package-listing](https://npmdoc.github.io/node-npmdoc-esprima/build/screen-capture.npmPackageListing.svg)
+![npmPackageListing](https://npmdoc.github.io/node-npmdoc-esprima/build/screenCapture.npmPackageListing.svg)
+
+![npmPackageDependencyTree](https://npmdoc.github.io/node-npmdoc-esprima/build/screenCapture.npmPackageDependencyTree.svg)
 
 
 
@@ -15,8 +17,7 @@
 
 {
     "author": {
-        "name": "Ariya Hidayat",
-        "email": "ariya.hidayat@gmail.com"
+        "name": "Ariya Hidayat"
     },
     "bin": {
         "esparse": "./bin/esparse.js",
@@ -79,13 +80,11 @@
     "main": "dist/esprima.js",
     "maintainers": [
         {
-            "name": "ariya",
-            "email": "ariya.hidayat@gmail.com"
+            "name": "ariya"
         }
     ],
     "name": "esprima",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/jquery/esprima.git"
