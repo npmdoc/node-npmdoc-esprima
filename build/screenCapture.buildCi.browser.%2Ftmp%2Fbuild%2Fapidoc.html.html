@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="http://esprima.org"
-
-    >esprima (v3.1.3)</a>
+    <a href="http://esprima.org">esprima (v3.1.3)</a>
 </h1>
 <h4>ECMAScript parsing infrastructure for multipurpose analysis</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.esprima">module esprima</a><ol>
 
@@ -142,11 +135,11 @@
 	            commentHandler.visit(node, metadata);
 	        }
 	    };
-	    var parserDelegate = (typeof delegate === &#x27;function&#x27;) ? proxyDelegate : null;
+	    var parserDelegate = (typeof delegate === 'function') ? proxyDelegate : null;
 	    var collectComment = false;
 	    if (options) {
-	        collectComment = (typeof options.comment === &#x27;boolean&#x27; &#x26;&#x26; options.comment);
-	        var attachComment = (typeof options.attachComment === &#x27;boolean&#x27; &#x26;&#x26; options.attachComment);
+	        collectComment = (typeof options.comment === 'boolean' &amp;&amp; options.comment);
+	        var attachComment = (typeof options.attachComment === 'boolean' &amp;&amp; options.attachComment);
 	        if (collectComment || attachComment) {
 	            commentHandler = new comment_handler_1.CommentHandler();
 	            commentHandler.attach = attachComment;
@@ -155,7 +148,7 @@
 	        }
 	    }
 	    var parser;
-	    if (options &#x26;&#x26; typeof options.jsx === &#x27;boolean&#x27; &#x26;&#x26; options.jsx) {
+	    if (options &amp;&amp; typeof options.jsx === 'boolean' &amp;&amp; options.jsx) {
 	        parser = new jsx_parser_1.JSXParser(code, options, parserDelegate);
 	    }
 	    else {
@@ -175,19 +168,19 @@
 	}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-&#x3e; esprima.tokenize(program);
-[ { type: &#x27;Keyword&#x27;, value: &#x27;const&#x27; },
-  { type: &#x27;Identifier&#x27;, value: &#x27;answer&#x27; },
-  { type: &#x27;Punctuator&#x27;, value: &#x27;=&#x27; },
-  { type: &#x27;Numeric&#x27;, value: &#x27;42&#x27; } ]
+&gt; esprima.tokenize(program);
+[ { type: 'Keyword', value: 'const' },
+  { type: 'Identifier', value: 'answer' },
+  { type: 'Punctuator', value: '=' },
+  { type: 'Numeric', value: '42' } ]
 
-&#x3e; esprima.<span class="apidocCodeKeywordSpan">parse</span>(program);
-{ type: &#x27;Program&#x27;,
+&gt; esprima.<span class="apidocCodeKeywordSpan">parse</span>(program);
+{ type: 'Program',
   body:
-   [ { type: &#x27;VariableDeclaration&#x27;,
+   [ { type: 'VariableDeclaration',
        declarations: [Object],
-       kind: &#x27;const&#x27; } ],
-  sourceType: &#x27;script&#x27; }
+       kind: 'const' } ],
+  sourceType: 'script' }
 ```
 ...</pre></li>
     </ul>
@@ -230,17 +223,17 @@
 A simple example on Node.js REPL:
 
 ```javascript
-&#x3e; var esprima = require(&#x27;esprima&#x27;);
-&#x3e; var program = &#x27;const answer = 42&#x27;;
+&gt; var esprima = require('esprima');
+&gt; var program = 'const answer = 42';
 
-&#x3e; esprima.<span class="apidocCodeKeywordSpan">tokenize</span>(program);
-[ { type: &#x27;Keyword&#x27;, value: &#x27;const&#x27; },
-  { type: &#x27;Identifier&#x27;, value: &#x27;answer&#x27; },
-  { type: &#x27;Punctuator&#x27;, value: &#x27;=&#x27; },
-  { type: &#x27;Numeric&#x27;, value: &#x27;42&#x27; } ]
+&gt; esprima.<span class="apidocCodeKeywordSpan">tokenize</span>(program);
+[ { type: 'Keyword', value: 'const' },
+  { type: 'Identifier', value: 'answer' },
+  { type: 'Punctuator', value: '=' },
+  { type: 'Numeric', value: '42' } ]
 
-&#x3e; esprima.parse(program);
-{ type: &#x27;Program&#x27;,
+&gt; esprima.parse(program);
+{ type: 'Program',
 ...</pre></li>
     </ul>
 
@@ -272,11 +265,11 @@ A simple example on Node.js REPL:
 	            commentHandler.visit(node, metadata);
 	        }
 	    };
-	    var parserDelegate = (typeof delegate === &#x27;function&#x27;) ? proxyDelegate : null;
+	    var parserDelegate = (typeof delegate === 'function') ? proxyDelegate : null;
 	    var collectComment = false;
 	    if (options) {
-	        collectComment = (typeof options.comment === &#x27;boolean&#x27; &#x26;&#x26; options.comment);
-	        var attachComment = (typeof options.attachComment === &#x27;boolean&#x27; &#x26;&#x26; options.attachComment);
+	        collectComment = (typeof options.comment === 'boolean' &amp;&amp; options.comment);
+	        var attachComment = (typeof options.attachComment === 'boolean' &amp;&amp; options.attachComment);
 	        if (collectComment || attachComment) {
 	            commentHandler = new comment_handler_1.CommentHandler();
 	            commentHandler.attach = attachComment;
@@ -285,7 +278,7 @@ A simple example on Node.js REPL:
 	        }
 	    }
 	    var parser;
-	    if (options &#x26;&#x26; typeof options.jsx === &#x27;boolean&#x27; &#x26;&#x26; options.jsx) {
+	    if (options &amp;&amp; typeof options.jsx === 'boolean' &amp;&amp; options.jsx) {
 	        parser = new jsx_parser_1.JSXParser(code, options, parserDelegate);
 	    }
 	    else {
@@ -305,19 +298,19 @@ A simple example on Node.js REPL:
 	}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-&#x3e; esprima.tokenize(program);
-[ { type: &#x27;Keyword&#x27;, value: &#x27;const&#x27; },
-  { type: &#x27;Identifier&#x27;, value: &#x27;answer&#x27; },
-  { type: &#x27;Punctuator&#x27;, value: &#x27;=&#x27; },
-  { type: &#x27;Numeric&#x27;, value: &#x27;42&#x27; } ]
+&gt; esprima.tokenize(program);
+[ { type: 'Keyword', value: 'const' },
+  { type: 'Identifier', value: 'answer' },
+  { type: 'Punctuator', value: '=' },
+  { type: 'Numeric', value: '42' } ]
 
-&#x3e; esprima.<span class="apidocCodeKeywordSpan">parse</span>(program);
-{ type: &#x27;Program&#x27;,
+&gt; esprima.<span class="apidocCodeKeywordSpan">parse</span>(program);
+{ type: 'Program',
   body:
-   [ { type: &#x27;VariableDeclaration&#x27;,
+   [ { type: 'VariableDeclaration',
        declarations: [Object],
-       kind: &#x27;const&#x27; } ],
-  sourceType: &#x27;script&#x27; }
+       kind: 'const' } ],
+  sourceType: 'script' }
 ```
 ...</pre></li>
     </ul>
@@ -365,17 +358,17 @@ A simple example on Node.js REPL:
 A simple example on Node.js REPL:
 
 ```javascript
-&#x3e; var esprima = require(&#x27;esprima&#x27;);
-&#x3e; var program = &#x27;const answer = 42&#x27;;
+&gt; var esprima = require('esprima');
+&gt; var program = 'const answer = 42';
 
-&#x3e; esprima.<span class="apidocCodeKeywordSpan">tokenize</span>(program);
-[ { type: &#x27;Keyword&#x27;, value: &#x27;const&#x27; },
-  { type: &#x27;Identifier&#x27;, value: &#x27;answer&#x27; },
-  { type: &#x27;Punctuator&#x27;, value: &#x27;=&#x27; },
-  { type: &#x27;Numeric&#x27;, value: &#x27;42&#x27; } ]
+&gt; esprima.<span class="apidocCodeKeywordSpan">tokenize</span>(program);
+[ { type: 'Keyword', value: 'const' },
+  { type: 'Identifier', value: 'answer' },
+  { type: 'Punctuator', value: '=' },
+  { type: 'Numeric', value: '42' } ]
 
-&#x3e; esprima.parse(program);
-{ type: &#x27;Program&#x27;,
+&gt; esprima.parse(program);
+{ type: 'Program',
 ...</pre></li>
     </ul>
 
@@ -388,3 +381,4 @@ A simple example on Node.js REPL:
     ]
 </div>
 </div>
+</body></html>
