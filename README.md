@@ -3,7 +3,9 @@
 
 [![NPM](https://nodei.co/npm/esprima.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/esprima)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-esprima/build/screenCapture.buildCi.browser.apidoc.html.png)](https://npmdoc.github.io/node-npmdoc-esprima/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-esprima/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-esprima/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-esprima/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-esprima/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-esprima/build/screenCapture.npmPackageListing.svg)
 
@@ -129,135 +131,6 @@
     },
     "version": "3.1.3"
 }
-```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module esprima](#apidoc.module.esprima)
-1.  [function <span class="apidocSignatureSpan">esprima.</span>parse (code, options, delegate)](#apidoc.element.esprima.parse)
-1.  [function <span class="apidocSignatureSpan">esprima.</span>tokenize (code, options, delegate)](#apidoc.element.esprima.tokenize)
-1.  object <span class="apidocSignatureSpan">esprima.</span>Syntax
-1.  string <span class="apidocSignatureSpan">esprima.</span>version
-
-
-
-# <a name="apidoc.module.esprima"></a>[module esprima](#apidoc.module.esprima)
-
-#### <a name="apidoc.element.esprima.parse"></a>[function <span class="apidocSignatureSpan">esprima.</span>parse (code, options, delegate)](#apidoc.element.esprima.parse)
-- description and source-code
-```javascript
-function parse(code, options, delegate) {
-	    var commentHandler = null;
-	    var proxyDelegate = function (node, metadata) {
-	        if (delegate) {
-	            delegate(node, metadata);
-	        }
-	        if (commentHandler) {
-	            commentHandler.visit(node, metadata);
-	        }
-	    };
-	    var parserDelegate = (typeof delegate === 'function') ? proxyDelegate : null;
-	    var collectComment = false;
-	    if (options) {
-	        collectComment = (typeof options.comment === 'boolean' && options.comment);
-	        var attachComment = (typeof options.attachComment === 'boolean' && options.attachComment);
-	        if (collectComment || attachComment) {
-	            commentHandler = new comment_handler_1.CommentHandler();
-	            commentHandler.attach = attachComment;
-	            options.comment = true;
-	            parserDelegate = proxyDelegate;
-	        }
-	    }
-	    var parser;
-	    if (options && typeof options.jsx === 'boolean' && options.jsx) {
-	        parser = new jsx_parser_1.JSXParser(code, options, parserDelegate);
-	    }
-	    else {
-	        parser = new parser_1.Parser(code, options, parserDelegate);
-	    }
-	    var ast = (parser.parseProgram());
-	    if (collectComment) {
-	        ast.comments = commentHandler.comments;
-	    }
-	    if (parser.config.tokens) {
-	        ast.tokens = parser.tokens;
-	    }
-	    if (parser.config.tolerant) {
-	        ast.errors = parser.errorHandler.errors;
-	    }
-	    return ast;
-	}
-```
-- example usage
-```shell
-...
-
-> esprima.tokenize(program);
-[ { type: 'Keyword', value: 'const' },
-  { type: 'Identifier', value: 'answer' },
-  { type: 'Punctuator', value: '=' },
-  { type: 'Numeric', value: '42' } ]
-
-> esprima.parse(program);
-{ type: 'Program',
-  body:
-   [ { type: 'VariableDeclaration',
-       declarations: [Object],
-       kind: 'const' } ],
-  sourceType: 'script' }
-'''
-...
-```
-
-#### <a name="apidoc.element.esprima.tokenize"></a>[function <span class="apidocSignatureSpan">esprima.</span>tokenize (code, options, delegate)](#apidoc.element.esprima.tokenize)
-- description and source-code
-```javascript
-function tokenize(code, options, delegate) {
-	    var tokenizer = new tokenizer_1.Tokenizer(code, options);
-	    var tokens;
-	    tokens = [];
-	    try {
-	        while (true) {
-	            var token = tokenizer.getNextToken();
-	            if (!token) {
-	                break;
-	            }
-	            if (delegate) {
-	                token = delegate(token);
-	            }
-	            tokens.push(token);
-	        }
-	    }
-	    catch (e) {
-	        tokenizer.errorHandler.tolerate(e);
-	    }
-	    if (tokenizer.errorHandler.tolerant) {
-	        tokens.errors = tokenizer.errors();
-	    }
-	    return tokens;
-	}
-```
-- example usage
-```shell
-...
-
-A simple example on Node.js REPL:
-
-'''javascript
-> var esprima = require('esprima');
-> var program = 'const answer = 42';
-
-> esprima.tokenize(program);
-[ { type: 'Keyword', value: 'const' },
-  { type: 'Identifier', value: 'answer' },
-  { type: 'Punctuator', value: '=' },
-  { type: 'Numeric', value: '42' } ]
-
-> esprima.parse(program);
-{ type: 'Program',
-...
 ```
 
 
