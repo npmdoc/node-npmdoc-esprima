@@ -1,4 +1,7 @@
-# api documentation for  [esprima (v3.1.3)](http://esprima.org)  [![npm package](https://img.shields.io/npm/v/npmdoc-esprima.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-esprima) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-esprima.svg)](https://travis-ci.org/npmdoc/node-npmdoc-esprima)
+# npmdoc-esprima
+
+#### api documentation for  [esprima (v3.1.3)](http://esprima.org)  [![npm package](https://img.shields.io/npm/v/npmdoc-esprima.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-esprima) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-esprima.svg)](https://travis-ci.org/npmdoc/node-npmdoc-esprima)
+
 #### ECMAScript parsing infrastructure for multipurpose analysis
 
 [![NPM](https://nodei.co/npm/esprima.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/esprima)
